@@ -97,11 +97,15 @@ header {
   width: 100%;
   max-width: 900px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
+.cards-2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 900px) {
+  .cards { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 640px) {
-  .cards { grid-template-columns: 1fr; }
+  .cards, .cards-2 { grid-template-columns: 1fr; }
 }
 
 .card {
@@ -133,6 +137,7 @@ header {
 }
 .card-primer::before { background: var(--sky); }
 .card-recipes::before { background: var(--gold); }
+.card-reference::before { background: #5DB86C; }
 
 /* Card number */
 .card-num {
@@ -159,6 +164,7 @@ header {
 }
 .badge-primer { background: rgba(17,171,226,0.15); color: var(--sky-light); }
 .badge-recipes { background: rgba(247,216,31,0.12); color: var(--gold); }
+.badge-reference { background: rgba(93,184,108,0.12); color: #5DB86C; }
 
 .card h2 {
   font-family: 'Instrument Serif', serif;
@@ -269,6 +275,17 @@ footer a:hover { color: var(--sky); }
     </div>
   </a>
 
+  <a class="card card-reference" href="reference.html">
+    <div class="card-num">03</div>
+    <div class="card-badge badge-reference">Deep Dive</div>
+    <h2>ITIL Framework Reference</h2>
+    <p>Comprehensive encyclopedia of all 13 ITIL 4 practices — definitions, KPIs, comparison tables, techniques, and KU-specific context. Use as a lookup when you need detail.</p>
+    <div class="card-meta">
+      <span class="slides-count">13 topics · 2,600+ lines</span>
+      <span class="cta">Open reference →</span>
+    </div>
+  </a>
+
 </div>
 
 <div class="section-label" style="margin-top:4vh;">
@@ -276,7 +293,7 @@ footer a:hover { color: var(--sky); }
   <span style="background:var(--gray)"></span>
 </div>
 
-<div class="cards">
+<div class="cards cards-2">
 
   <div class="card card-soon">
     <div class="card-num">03</div>
